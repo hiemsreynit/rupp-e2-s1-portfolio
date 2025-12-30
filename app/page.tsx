@@ -1,38 +1,11 @@
+"use client";
 import Image from "next/image";
 import MyImage from "@/public/sreynit.png";
 import { Button } from "@/components/ui/button";
 import { FaFacebook, FaGithub, FaTelegram, FaLinkedin } from "react-icons/fa";
-import { Icon, icons, Key } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Home() {
-
-  // const JourneyIcons = [
-  //   {
-  //     Icon: "/figma.svg",
-  //     alt: "figma icon",
-  //     width: 60,
-  //     height: 60
-  //   },
-  //   {
-  //     Icon: "/java.svg",
-  //     alt: "java icon",
-  //     width: 60,
-  //     height: 60
-  //   },
-  //   {
-  //     Icon: "/reactjs.svg",
-  //     alt: "react.js icon",
-  //     width: 60,
-  //     height: 60
-  //   },
-  //   {
-  //     Icon: "/nextjs.svg",
-  //     alt: "next.js icon",
-  //     width: 60,
-  //     height: 60
-  //   }
-  // ]
-
   const FloatIcon = [
     {
       Icon: "/figma.svg",
@@ -42,167 +15,140 @@ export default function Home() {
       desc: "Designed some responsive websites and a high-fidelity mini banking system app.",
       width: 48,
       height: 48,
-      position:
-        "top-45 left-25 lg:top-40 md:top-40 md:left-60 lg:left-140 -rotate-20 transform -translate-x-1/2 -translate-y-1/2",
     },
     {
       Icon: "/reactjs.svg",
       alt: "reactjs icon",
       year: "2025",
       title: "Frontend Development",
-      desc: "Built e-commerce platforms, e-learning portals, and modern portfolio templates using React & Tailwind CSS.",
+      desc: "Built e-commerce platforms and modern portfolio templates.",
       width: 48,
       height: 48,
-      position:
-        "top-50 right-5 md:top-50 md:right-40 lg:right-130 transform -translate-x-1/2 -translate-y-1/2",
     },
     {
       Icon: "/java.svg",
       alt: "java icon",
       year: "2024",
       title: "Software Logic",
-      desc: "Developed a Cinema Hall Booking system using 2D arrays for seating logic, alongside various logic-based mini-projects.",
+      desc: "Developed a Cinema Hall Booking system using 2D arrays.",
       width: 48,
       height: 48,
-      position:
-        "top-100 right-0 md:top-110 md:right-45 lg:right-135 rotate-15 transform -translate-x-1/2 -translate-y-1/2",
     },
     {
       Icon: "/nextjs.svg",
       alt: "nextjs icon light",
       year: "2025",
       title: "Modern Web Mastery",
-      desc: "Developed this portfolio using Next.js, focusing on optimized performance, fast page transitions, and SEO-friendly rendering.",
+      desc: "Developed this portfolio using Next.js for optimized performance.",
       width: 48,
       height: 48,
-      position:
-        "flex dark:hidden text-black dark:text-white top-100 left-15 md:top-110 md:left-50 lg:left-140 transform -translate-x-1/2 -translate-y-1/2",
-    },
-    {
-      Icon: "/nextjs.png",
-      alt: "nextjs icon dark",
-      year: "2025",
-      title: "Modern Web Mastery",
-      desc: "Developed this portfolio using Next.js, focusing on optimized performance, fast page transitions, and SEO-friendly rendering.",
-      width: 52,
-      height: 52,
-      position:
-        "dark:flex hidden text-white top-110 left-10 md:top-110 lg:top-110 md:left-55 lg:left-140 transform -translate-x-1/2 -translate-y-1/2",
     },
   ];
 
+  // const ScrollingIcons = [...FloatIcon, ...FloatIcon];
+
   return (
-    <main className="grid grid-cols-3 justify-center lg:justify-between md:justify-between items-center gap-x-10 px-16 md:px-16 lg:px-36">
-      <section className="w-fit">
-        <article className="md:w-full flex flex-col items-center md:items-start justify-center mb-13 gap-80 md:gap-6 lg:gap-6">
-          <h1 className="text-2xl lg:text-5xl overflow-hidden font-bold text-start text-pink">
-            <span className="md:flex lg:flex hidden">
-              <b>Hiem Sreynit | Dev & Designer</b>
-            </span>
-            <span className="flex flex-row md:hidden lg:hidden">
-              <b>
-                Hiem Sreynit | <br /> Dev & Designer
-              </b>
-            </span>
+    // FIX 1: Changed grid-cols-3 to grid-cols-1 for mobile, lg:grid-cols-3 for desktop
+    <main className="grid grid-cols-1 lg:grid-cols-3 items-center gap-y-10 lg:gap-x-10 px-6 md:px-16 lg:px-36 py-10 lg:py-20 min-h-screen">
+      <section
+        className="order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left"
+        id="home"
+      >
+        <article className="flex flex-col gap-6">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary">
+            Hiem Sreynit | <br className="lg:hidden" /> Dev & Designer
           </h1>
-          <section className="w-fit flex flex-col item-center md:items-start justify-start md:justify-center gap-4">
-            <p className="hidden md:flex lg:flex text-sm text-desc-text">
-              Developer & UX/UI Designer. I turn complex ideas into simple,
-              beautiful digital solutions.
-            </p>
-            <section className="flex justify-start items-center gap-3">
-              <a href="#about-me-sec">
-                <Button className="border-2 border-primary bg-transparent hover:text-white hover:bg-pink hover:border-pink rounded-full text-primary">
-                  About me
-                </Button>
-              </a>
-              <Button className="rounded-full w-fit mx-auto block bg-primary text-white px-4 py-2 hover:bg-pink">
-                Download Resume
+          <p className="text-sm md:text-base text-desc-text max-w-md">
+            Developer & UX/UI Designer. I turn complex ideas into simple,
+            beautiful digital solutions.
+          </p>
+          <div className="flex justify-center lg:justify-start items-center gap-3">
+            <a href="#about-me-sec">
+              <Button className="border-2 border-primary bg-transparent hover:text-white hover:bg-hover hover:border-pink rounded-full text-primary">
+                About me
               </Button>
-            </section>
-          </section>
+            </a>
+            <Button className="rounded-full bg-primary text-white px-4 py-2 hover:bg-hover">
+              Download Resume
+            </Button>
+          </div>
         </article>
       </section>
-      <figure className="flex flex-col justify-center items-center mt-30">
-        <figure>
-          {FloatIcon.map((icon) => (
-            <section
-              key={icon.alt}
-              className={`absolute animate-bounce-slow ${icon.position}`}
-            >
-              <Image
-                src={icon.Icon}
-                alt={icon.alt}
-                width={icon.width}
-                height={icon.height}
-                className="w-10 md:w-11 lg:w-12"
-                
-              />
-            </section>
-          ))}
-        </figure>
-        <div className="w-60 h-60 md:w-80 md:h-80 lg:w-80 lg:h-80 shadow-[inset_0_1px_60px_rgba(0,0,0,0.6)] shadow-pink/70 dark:shadow-background bg-pink/30 rounded-full flex justify-end overflow-hidden dark:bg-pink/50">
-          <figure >
-            <Image
+
+      <figure className="order-1 lg:order-2 flex flex-col justify-center items-center">
+        <div className="relative mask-gradient w-64 h-64 md:w-80 md:h-80 shadow-[inset_0_1px_60px_rgba(0,0,0,0.6)] shadow-secondary/70 dark:shadow-background bg-secondary/40 rounded-full flex justify-center items-end overflow-hidden dark:bg-pink/50">
+          <Image
             src={MyImage}
             alt="my picture"
             placeholder="blur"
             width={300}
             height={300}
-            className="w-55 h-60 md:w-75 md:h-80 lg:w-75 lg:h-80"
+            className="w-auto h-[90%] object-cover"
           />
-          </figure>
         </div>
 
-        <article className="flex flex-col justify-center items-center gap-y-6">
-          {/* <section className="flex flex-col justify-center item-center gap-y-30"> */}
-            <section className="flex flex-col justify-center items-center mt-35 md:mt-8 gap-0">
-              <h4 className="flex text-gray-700 md:hidden lg:hidden line-clamp-3 md:line-clamp-2 lg:line-clamp-2 w-70 md:w-90 text-center md:text-[16px] font-medium dark:text-gray-300">
-                I turn complex ideas into simple,
-                beautiful digital solutions.
-              </h4>
-              <section className="flex flex-col justify-center items-center gap-0">
-                <section className="flex justify-center item-center gap-4 w-fit">
-                  <a href="https://web.facebook.com/hiem.sreynit.9">
-                    <FaFacebook className="mt-4 mx-auto block text-3xl text-primary hover:text-pink" />
-                  </a>
-                  <a href="https://github.com/hiemsreynit">
-                    <FaGithub className="mt-4 mx-auto block text-3xl text-primary hover:text-pink" />
-                  </a>
-                  <a href="https://t.me/hiemsreynit">
-                    <FaTelegram className="mt-4 mx-auto block text-3xl text-primary hover:text-pink" />
-                  </a>
-                  <a href="https://www.linkedin.com/in/hiem-sreynit-271531376/">
-                    <FaLinkedin className="mt-4 mx-auto block text-3xl text-primary hover:text-pink" />
-                  </a>
-                </section>
-              </section>
-            </section>
-          {/* </section> */}
-        </article>
+        <div className="flex justify-center items-center gap-4 mt-6">
+          <a href="https://web.facebook.com/hiem.sreynit.9" target="_blank">
+            <FaFacebook className="text-3xl text-primary hover:text-hover" />
+          </a>
+          <a href="https://github.com/hiemsreynit" target="_blank">
+            <FaGithub className="text-3xl text-primary hover:text-hover" />
+          </a>
+          <a href="https://t.me/hiemsreynit" target="_blank">
+            <FaTelegram className="text-3xl text-primary hover:text-hover" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/hiem-sreynit-271531376/"
+            target="_blank"
+          >
+            <FaLinkedin className="text-3xl text-primary hover:text-hover" />
+          </a>
+        </div>
       </figure>
 
-        <section className="flex flex-col items-center gap-y-2 overflow-hidden ">
-          {FloatIcon.map((icon) => (
-          <article key={icon.alt}>
-            <section className="shadow-[inset_10px_1px_100px_rgba(0,0,0,0.6)] rounded-4xl shadow-background dark:shadow-background dark:bg-pink/50 bg-pink/30 w-fit flex justify-between items-center gap-x-4 px-12 py-6">
-              <figure >
-                  <Image
-                  src={icon.Icon}
-                  alt={icon.Icon}
-                  width={icon.width}
-                  height={icon.height}
-                  />
-              </figure>
-              <div className="w-0.5 h-10 bg-desc-text text-desc-text"> </div>
-              <section>
-                <p className="text-md md:text-[16px] lg:text-[16px] font-bold text-accent-foreground">{icon.year} | {icon.title}</p>
-                <p className="text-desc-text">{icon.desc}</p>
-              </section>
-            </section>
-          </article>
-          ))}
-        </section>
+      <section className="order-3 flex flex-col items-center lg:items-end gap-y-4 w-full">
+        <div className="relative h-50 w-full max-w-sm overflow-hidden [mask-image:linear-gradient(to_bottom,transparent,black_10%,black_90%,transparent)]">
+          <motion.div
+            className="flex flex-col gap-y-4"
+            animate={{
+              y: ["0%", "-50%"], // Moves up by half the total height of the doubled list
+            }}
+            transition={{
+              duration: 10, // Adjust speed here (higher = slower)
+              ease: "linear",
+              repeat: Infinity,
+            }}
+            whileHover={{ transition: { paused: true } }} // Optional: Pause on hover
+          >
+            {FloatIcon.map((icon, index) => (
+              <article key={index} className="w-full px-2">
+                <div className="shadow-lg rounded-2xl dark:bg-secondary/50 bg-secondary/10 flex items-center gap-x-4 px-6 py-5 border border-white/10 h-[120px]">
+                  <figure className="shrink-0">
+                    <Image
+                      src={icon.Icon}
+                      alt={icon.alt}
+                      width={48}
+                      height={48}
+                      className="object-contain"
+                    />
+                  </figure>
+
+                  <div className="w-[1px] h-10 bg-gray-400/30"></div>
+
+                  <div className="flex flex-col justify-center">
+                    <p className="text-sm font-bold text-accent-foreground leading-tight">
+                      {icon.year} | {icon.title}
+                    </p>
+                    <p className="text-xs text-desc-text line-clamp-2 mt-1">
+                      {icon.desc}
+                    </p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </motion.div>
+        </div>
+      </section>
     </main>
   );
 }
