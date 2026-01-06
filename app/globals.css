@@ -98,6 +98,7 @@
 }
 
 .dark {
+  --hover: #ff4d6d;
   --style: #7B81D5;
   --desc-text: #D1D1D1;
   --text-primary: #F5F5F7;
