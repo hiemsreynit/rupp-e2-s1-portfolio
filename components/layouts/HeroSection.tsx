@@ -45,7 +45,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-3 gap-20 p-0 md:p-0 items-center lg:gap-x-10 min-h-screen">
+    <section className="grid grid-cols-1 lg:grid-cols-3 gap-20 p-0 md:p-0 items-center lg:gap-x-10">
       <section
         className="order-2 lg:order-1 flex flex-col items-center lg:items-start text-center lg:text-left"
         id="home"
@@ -113,8 +113,7 @@ export default function HeroSection() {
               duration: 10, // Adjust speed here (higher = slower)
               ease: "linear",
               repeat: Infinity,
-            }}
-            whileHover={{ transition: { paused: true } }} // Optional: Pause on hover
+            }} // Optional: Pause on hover
           >
             {FloatIcon.map((icon, index) => (
               <article key={index} className="w-full px-2">

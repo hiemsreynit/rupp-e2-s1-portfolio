@@ -5,7 +5,7 @@ import { IoArrowForwardCircle } from "react-icons/io5";
 
 export default function About() {
   return (
-    <section className="min-h-screen flex flex-col gap-y-20 md:gap-y-0 md:flex-col lg:flex-row justify-around md:justify-around lg:justify-around items-center relative">
+    <section className="min-h-screen flex flex-col gap-y-20 md:gap-y-0 md:flex-col lg:flex-row justify-around md:justify-around lg:justify-around items-center relative" id="about-me-sec">
       <div className="absolute inset-0 bg-primary/10 blur-[100px] rounded-full" />
       <section className="relative z-5 w-72 h-72 md:w-96 md:h-110 rounded-3xl rotate-12 hover:scale-105 transition-transform duration-500">
         <div className="relative inset-0 bg-transparent border-4 border-style h-full md:h-[90%] lg:h-[90%] rounded-[40px] md:rounded-[80px] lg:rounded-[80px] rotate-4 md:rotate-2 lg:rotate-2" />
@@ -20,7 +20,6 @@ export default function About() {
       </section>
       <section
         className="md:w-[80%] lg:w-[50%] flex justify-center items-center md:items-center lg:items-start flex-col gap-8 px-6"
-        id="about-me-sec"
       >
         <h2 className="text-2xl md:text-4xl font-bold text-desc text-style">
           Who is&nbsp;
@@ -58,7 +57,7 @@ export default function About() {
             <dd className="text-desc-text">Commitment</dd>
           </dl>
         </section>
-        <a href="" className="relative w-50 bg-style hover:scale-102 text-desc-text pl-1 py-0 rounded-full flex flex-row-reverse gap-1 items-center justify-between transition-transform duration-300"> 
+        <a href="#project-sec" className="relative w-50 bg-style hover:scale-102 text-desc-text pl-1 py-0 rounded-full flex flex-row-reverse gap-1 items-center justify-between transition-transform duration-300"> 
           <IoArrowForwardCircle className="w-12 h-12 text-white"/>
             <button className="w-full bg-primary text-white px-4 py-2 rounded-full">Broswe Projects</button>
         </a>

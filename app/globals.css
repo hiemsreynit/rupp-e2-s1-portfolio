@@ -13,6 +13,7 @@
   --color-text-primary: var(--text-primary);
   --color-desc-text: var(--desc-text); 
   --color-style: var(--style);
+  --color-style-1: var(--style-1);
 
   
   --color-background: var(--background);
@@ -60,6 +61,7 @@
 :root {
   --hover: #e3024d;
   --style: #D4AF37;
+  --style-1: #ffc400;
   --text-primary: #1A1A1A;
   --desc-text: #4A4A4A;
   --soft-pink: #FFC4C4;
@@ -85,8 +87,8 @@
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(75.63% 0.15453 82.981);
+  --chart-5: #fe9a00;
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -100,6 +102,7 @@
 .dark {
   --hover: #e3024d;
   --style: #D4AF37;
+  --style-1: #ffc400;
   --desc-text: #D1D1D1;
   --text-primary: #F5F5F7;
   --soft-pink: #FFB3B3;
